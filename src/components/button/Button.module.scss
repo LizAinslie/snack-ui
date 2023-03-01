@@ -1,0 +1,23 @@
+@import '../../styles/colors';
+
+.button {
+  @apply rounded-md px-4 py-3 text-white inline-flex flex-row items-center
+    justify-center gap-2 transition duration-200 ease-in-out;
+
+  &.block {
+    @apply w-full;
+  }
+
+  @include colors using ($color) {
+    &.#{$color} {
+      @apply bg-#{$color}-500 hover:bg-#{$color}-600 shadow-md
+        shadow-#{$color}-500/50 hover:shadow-#{$color}-600/50;
+      
+      &.muted {
+        @apply bg-transparent text-#{$color}-900 shadow-none 
+          hover:bg-#{$color}-300 hover:bg-opacity-50 hover:shadow-md
+          hover:shadow-#{$color}-300/50;
+      }
+    }
+  }
+}
