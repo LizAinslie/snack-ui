@@ -29,7 +29,7 @@ export const SButton = forwardRef(<C extends ElementType = "button">({
   
   return <Component
     ref={ref} 
-    className={clsx(styles.button, styles[color], {
+    className={clsx(styles.button, styles[`${color}`], {
       [styles.block]: block,
       [styles.muted]: muted,
     })}
