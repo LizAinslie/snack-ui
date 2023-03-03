@@ -1,0 +1,18 @@
+@import '../../styles/colors';
+
+.pageContainer {
+  &.fullPage {
+    @apply h-screen w-screen;
+  }
+
+  @include colors using ($color) {
+    &.#{$color} {
+      @apply bg-#{$color}-100 text-#{$color}-900;
+
+      &.dark {
+        // todo: balance these fucking colors
+        // @apply bg-#{$color}-900 text-#{$color}-50;
+      }
+    }
+  }
+}

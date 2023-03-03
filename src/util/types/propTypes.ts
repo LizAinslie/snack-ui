@@ -15,3 +15,7 @@ export type Color = typeof colors;
 export type PropsWithColor = {
   color: Color | string;
 };
+
+export type PropsWithDark = {
+  dark?: boolean;
+};
