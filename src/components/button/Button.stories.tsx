@@ -1,18 +1,18 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { SButton } from './Button';
+import { Button } from './Button';
 import { colors } from '../../util/types/propTypes';
 
 export default {
   title: 'Component/Button',
-  component: SButton,
+  component: Button,
   argTypes: {},
-} as ComponentMeta<typeof SButton>;
+} as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof SButton> = (args) => 
+const Template: ComponentStory<typeof Button> = (args) => 
   <div
     className={`flex flex-wrap ${args.block ? 'flex-col' : 'flex-row'} gap-4`}
   > 
-    {colors.map(color => <SButton {...args} color={color} />)}
+    {colors.map(color => <Button {...args} color={color} />)}
   </div>
 ;
 

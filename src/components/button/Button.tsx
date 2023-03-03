@@ -17,7 +17,7 @@ type ButtonProps<C extends ElementType> = {
   muted?: boolean,
 } & PropsWithChildren & PropsWithColor & ComponentPropsWithoutRef<C>;
 
-export const SButton = forwardRef(<C extends ElementType = "button">({
+export const Button = forwardRef(<C extends ElementType = "button">({
   block = false,
   muted = false,
   color,
@@ -27,13 +27,15 @@ export const SButton = forwardRef(<C extends ElementType = "button">({
 }: ButtonProps<C>, ref: PolymorphicRef<C>) => {
   const Component = as || 'button';
   
-  return <Component
-    ref={ref} 
-    className={clsx(styles.button, styles[`${color}`], {
-      [styles.block]: block,
-      [styles.muted]: muted,
-    })}
-    {...rest}
-  >{children}</Component>
+  return (
+    <Component
+      ref={ref} 
+      className={clsx(styles.button, styles[`${color}`], {
+        [styles.block]: block,
+        [styles.muted]: muted,
+      })}
+      {...rest}
+    >{children}</Component>
+  );
 });
 
