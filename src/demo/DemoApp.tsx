@@ -1,5 +1,6 @@
 import { FC, useState } from "react";
 import { Button } from "../components/button";
+import { HeaderBar } from "../components/headerBar";
 import PageContainer from "../components/pageContainer/PageContainer";
 
 const DemoApp: FC = () => {
@@ -8,6 +9,11 @@ const DemoApp: FC = () => {
 
   return (
     <PageContainer color={color} fullPage>
+      <HeaderBar color={color}>
+        <div className="flex flex-row gap-4">
+          <Button color={color}>Header Button</Button>
+        </div>
+      </HeaderBar>
       <div className="p-4">
         <Button
           color={color}
