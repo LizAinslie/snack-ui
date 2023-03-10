@@ -32,15 +32,20 @@ export const Button: FC<ButtonProps<ElementType<any>>> = forwardRef(
     }: ButtonProps<C>,
     ref: PolymorphicRef<C>
   ) => {
-    const Component = as || "button";
+    const Component = as ?? "button";
 
     return (
       <Component
         ref={ref}
-        className={clsx(styles.button, styles[`${color}`], {
-          [styles.block]: block,
-          [styles.muted]: muted,
-        })}
+        className={clsx(
+          styles.button,
+          styles[`${color}`],
+          {
+            [styles.block]: block,
+            [styles.muted]: muted,
+          },
+          rest.className
+        )}
         {...rest}
       >
         {children}
