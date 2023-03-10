@@ -1,0 +1,14 @@
+@import "../../styles/colors";
+
+.headerBar {
+  @apply px-2 py-1.5;
+
+  @include colors using ($color) {
+    &.#{$color} {
+      @apply bg-#{$color}-200;
+
+      &.dark {
+      }
+    }
+  }
+}
